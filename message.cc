@@ -1,5 +1,7 @@
 ﻿#include "message.h"
 
+#include <iostream>
+
 Message::Message(const std::string &text, const std::string &sender,
                  const std::string &receiver)
     : text_(text), sender_(sender), receiver_(receiver) {}
