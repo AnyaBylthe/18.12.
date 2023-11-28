@@ -6,7 +6,7 @@
 #include <string>
 
 class User {
-public:
+ public:
   std::string name_;
   std::string login_;
   std::string pass_;
@@ -15,4 +15,4 @@ public:
        const std::string &pass);
 };
 
-#endif // USER_H
+#endif  // USER_H

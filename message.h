@@ -7,7 +7,7 @@
 #include <string>
 
 class Message {
-public:
+ public:
   std::string text_;
   std::string sender_;
   std::string receiver_;
@@ -16,4 +16,4 @@ public:
           const std::string &receiver);
 };
 
-#endif // MESSAGE_H
+#endif  // MESSAGE_H
