@@ -1,15 +1,14 @@
-// main.cc
 #include <iostream>
 
 #include "message.h"
 #include "user.h"
 
 // Включаем объявления функций из user.cc и message.cc
-extern bool saveUserState(const User& user, const std::string& filename);
-extern User loadUserState(const std::string& filename);
-extern bool saveMessageState(const Message& message,
-                             const std::string& filename);
-extern Message loadMessageState(const std::string& filename);
+extern bool saveUserState(const User &user, const std::string &filename);
+extern User loadUserState(const std::string &filename);
+extern bool saveMessageState(const Message &message,
+                             const std::string &filename);
+extern Message loadMessageState(const std::string &filename);
 
 int main() {
   // Пример использования
@@ -31,14 +30,14 @@ int main() {
 
   // Чтение состояния объектов из файлов
   User loadedUser = loadUserState("user1.txt");
-  if (!loadedUser._name.empty()) {
+  if (!loadedUser.name_.empty()) {
     std::cout << "User state loaded successfully." << std::endl;
   } else {
     std::cerr << "Failed to load user state." << std::endl;
   }
 
   Message loadedMessage = loadMessageState("message1.txt");
-  if (!loadedMessage._text.empty()) {
+  if (!loadedMessage.text_.empty()) {
     std::cout << "Message state loaded successfully." << std::endl;
   } else {
     std::cerr << "Failed to load message state." << std::endl;
@@ -46,14 +45,14 @@ int main() {
 
   // Вывод загруженных данных
   std::cout << "Loaded User:" << std::endl;
-  std::cout << "Name: " << loadedUser._name << std::endl;
-  std::cout << "Login: " << loadedUser._login << std::endl;
-  std::cout << "Password: " << loadedUser._pass << std::endl;
+  std::cout << "Name: " << loadedUser.name_ << std::endl;
+  std::cout << "Login: " << loadedUser.login_ << std::endl;
+  std::cout << "Password: " << loadedUser.pass_ << std::endl;
 
   std::cout << "\nLoaded Message:" << std::endl;
-  std::cout << "Text: " << loadedMessage._text << std::endl;
-  std::cout << "Sender: " << loadedMessage._sender << std::endl;
-  std::cout << "Receiver: " << loadedMessage._receiver << std::endl;
+  std::cout << "Text: " << loadedMessage.text_ << std::endl;
+  std::cout << "Sender: " << loadedMessage.sender_ << std::endl;
+  std::cout << "Receiver: " << loadedMessage.receiver_ << std::endl;
 
   return 0;
 }

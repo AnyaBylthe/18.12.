@@ -5,13 +5,13 @@
 #include <string>
 
 class User {
- public:
-  std::string _name;
-  std::string _login;
-  std::string _pass;
+public:
+  std::string name_;
+  std::string login_;
+  std::string pass_;
 
-  User(const std::string& name, const std::string& login,
-       const std::string& pass);
+  User(const std::string &name, const std::string &login,
+       const std::string &pass);
 };
 
-#endif  // USER_H
+#endif // USER_H

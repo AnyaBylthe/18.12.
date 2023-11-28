@@ -4,16 +4,16 @@
 #include <fstream>
 #include <iostream>
 
-Message::Message(const std::string& text, const std::string& sender,
-                 const std::string& receiver)
-    : _text(text), _sender(sender), _receiver(receiver) {}
+Message::Message(const std::string &text, const std::string &sender,
+                 const std::string &receiver)
+    : text_(text), sender_(sender), receiver_(receiver) {}
 
-bool saveMessageState(const Message& message, const std::string& filename) {
+bool saveMessageState(const Message &message, const std::string &filename) {
   std::ofstream outFile(filename);
   if (outFile.is_open()) {
-    outFile << message._text << std::endl;
-    outFile << message._sender << std::endl;
-    outFile << message._receiver << std::endl;
+    outFile << message.text_ << std::endl;
+    outFile << message.sender_ << std::endl;
+    outFile << message.receiver_ << std::endl;
     outFile.close();
     return true;
   } else {
@@ -22,13 +22,13 @@ bool saveMessageState(const Message& message, const std::string& filename) {
   }
 }
 
-Message loadMessageState(const std::string& filename) {
+Message loadMessageState(const std::string &filename) {
   Message message("", "", "");
   std::ifstream inFile(filename);
   if (inFile.is_open()) {
-    getline(inFile, message._text);
-    getline(inFile, message._sender);
-    getline(inFile, message._receiver);
+    getline(inFile, message.text_);
+    getline(inFile, message.sender_);
+    getline(inFile, message.receiver_);
     inFile.close();
   } else {
     std::cerr << "Unable to open file for reading: " << filename << std::endl;
