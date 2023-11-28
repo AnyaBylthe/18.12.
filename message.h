@@ -2,6 +2,8 @@
 #ifndef MESSAGE_H
 #define MESSAGE_H
 
+#include <fstream>
+#include <iostream>
 #include <string>
 
 class Message {

@@ -1,8 +1,4 @@
-﻿// message.cc
-#include "message.h"
-
-#include <fstream>
-#include <iostream>
+﻿#include "message.h"
 
 Message::Message(const std::string &text, const std::string &sender,
                  const std::string &receiver)

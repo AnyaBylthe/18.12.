@@ -1,8 +1,4 @@
-﻿// user.cc
-#include "user.h"
-
-#include <fstream>
-#include <iostream>
+﻿#include "user.h"
 
 User::User(const std::string &name, const std::string &login,
            const std::string &pass)
